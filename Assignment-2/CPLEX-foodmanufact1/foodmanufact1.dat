@@ -1,0 +1,27 @@
+/*********************************************
+ * OPL 22.1.0.0 Data
+ * Author: jamia
+ * Creation Date: 29 Nov 2022 at 02:00:47
+ *********************************************/
+VegRaw = {Veg1, Veg2};
+NonVegRaw = {Oil1, Oil2, Oil3};
+NbMonths = 6;
+CostRaw = [[110 130 110 120 100 90]
+           [120 130 140  110 120 100]
+           [130 110 130 120  150 140]
+           [110 90 100 120 110 80]
+           [115 115 95 125 105 135]
+            ];
+ProfitProd = 150;
+CostStore = 5;
+MaxVeg = 200;
+MaxOil = 250;
+InitialStock = 500;
+FinalStock = 500;
+MaxStore = 1000;
+MinUse = 20 ;
+HardRaw = [8.8 6.1 2 4.2 5];
+MinHard = 3;
+MaxHard = 6;
+
+ 

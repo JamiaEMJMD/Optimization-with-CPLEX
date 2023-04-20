@@ -1,0 +1,103 @@
+
+/*********************************************
+ * OPL 22.1.0.0 Data
+ * Author: Jamia Begum
+  *    NIU: 1676891
+ * Creation Date: 8 Jan 2023 at 01:02:53
+ *********************************************/
+
+ ComputerTypes = { 
+   ModelA, // {I73GHz, SDD512Mb, CDRW, NVIDIA, Bluetooth}
+   ModelB, // {I53GHz, HDD1Tb, Ethernet, NVIDIA}
+   ModelC, // {I53GHz, HDD512Mb, DVDRW, AMDRadeon, Bluetooth}
+   ModelD, // {I73GHz, SDD512Mb, Ethernet, NVIDIA, Bluetooth}
+   ModelE, // {I53GHz, HDD1Tb, CDRW, NVIDIA}
+   ModelF  // {I52GHz, HDD512Mb, DVDRW, AMDRadeon, Bluetooth}
+};
+
+ActivityTypes = { 
+   InstallCPU, 
+   InstallDisk,	
+   InstallOptDevice, 
+   InstallGPU, 
+   InstallEthernet,
+   InstallBluetooth, 
+   Test, 
+   Pack 
+};
+
+ResourceTypes = { 
+   CPUInstaller, 
+   DriveInstaller, 
+   CardInstaller,
+   CommInstaller, 
+   Tester, 
+   Packer 
+};
+
+requiredQuantities = [4,3,1,2,6,4];
+
+activities = #[
+   	ModelA: // {I73GHz, SDD512Mb, CDRW, NVIDIA, Bluetooth},
+	{ <InstallCPU, 8, CPUInstaller, {}>, 
+	  <InstallDisk, 5,DriveInstaller, {InstallCPU}>, 
+	  <InstallOptDevice, 4, DriveInstaller, {InstallDisk}>,
+	  <InstallGPU, 4, CardInstaller, {InstallCPU}>,
+	  <InstallBluetooth, 5, CommInstaller, {InstallGPU,InstallOptDevice}>,
+	  <Test, 10, Tester, {InstallBluetooth}>,
+	  <Pack, 5, Packer, {Test}>
+	},
+   	ModelB:// {I53GHz, HDD1Tb, Ethernet, NVIDIA}
+	{ <InstallCPU, 7, CPUInstaller, {}>, 
+	  <InstallDisk, 10,DriveInstaller, {InstallCPU}>, 
+	  <InstallGPU, 4, CardInstaller, {InstallCPU}>,
+	  <InstallEthernet, 5, CommInstaller, {InstallGPU,InstallDisk}>,
+	  <Test, 9, Tester, {InstallEthernet}>,
+	  <Pack, 5, Packer, {Test}>
+	},
+    ModelC: // {I53GHz, HDD512Mb, DVDRW, AMDRadeon,Bluetooth}	
+	{ <InstallCPU, 7, CPUInstaller, {}>, 
+	  <InstallDisk, 10,DriveInstaller, {InstallCPU}>, 
+	  <InstallOptDevice, 6, DriveInstaller, {InstallDisk}>,
+	  <InstallGPU, 4, CardInstaller, {InstallCPU}>,
+	  <InstallBluetooth, 5, CommInstaller, {InstallGPU,InstallOptDevice}>,
+	  <Test, 10, Tester, {InstallBluetooth}>,
+	  <Pack, 5, Packer, {Test}>
+	},
+   	ModelD: // {I73GHz, SDD512Mb, Ethernet, NVIDIA, Bluetooth}
+   	{ <InstallCPU, 8, CPUInstaller, {}>, 
+	  <InstallDisk, 5,DriveInstaller, {InstallCPU}>, 
+	  <InstallGPU, 4, CardInstaller, {InstallCPU}>,
+	  <InstallEthernet, 5, CommInstaller, {InstallGPU,InstallDisk}>,
+	  <InstallBluetooth, 5, CommInstaller, {InstallEthernet}>,
+	  <Test, 10, Tester, {InstallBluetooth}>,
+	  <Pack, 5, Packer, {Test}>
+   	},
+   	ModelE: // {I53GHz, HDD1Tb, CDRW, NVIDIA}
+   	{ <InstallCPU, 7, CPUInstaller, {}>, 
+	  <InstallDisk, 10,DriveInstaller, {InstallCPU}>, 
+	  <InstallGPU, 4, CardInstaller, {InstallCPU}>,
+	  <InstallOptDevice, 6, DriveInstaller, {InstallDisk}>,
+	  <Test, 9, Tester, {InstallGPU, InstallOptDevice}>,
+	  <Pack, 5, Packer, {Test}>
+   	},
+   	ModelF: // {I52GHz, HDD512Mb, DVDRW, AMDRadeon, Bluetooth}
+   	{ <InstallCPU, 7, CPUInstaller, {InstallGPU}>, 
+	  <InstallDisk, 10,DriveInstaller, {InstallCPU}>, 
+	  <InstallGPU, 4, CardInstaller, {}>,
+	  <InstallOptDevice, 6, DriveInstaller, {InstallDisk}>,
+	  <InstallBluetooth, 5, CommInstaller, {InstallOptDevice}>,
+	  <Test, 10, Tester, {InstallBluetooth}>,
+	  <Pack, 5, Packer, {Test}>
+   	}
+]#;
+
+resources =  { 
+   <CPUInstaller, 1>, 
+   <DriveInstaller, 2>, 
+   <CardInstaller, 1>,
+   <CommInstaller, 1>,
+   <Tester, 2>,
+   <Packer, 1>
+};
+ 

@@ -1,0 +1,12 @@
+!SESSION 2022-11-16 19:26:44.922 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=11.0.13+8
+JRE 11 Windows 10 amd64-64-Bit Compressed References 20211022_218 (JIT enabled, AOT enabled)
+OpenJ9   - e1e72c497
+OMR      - 299b6a2d2
+JCL      - 2d83aa3b76 based on jdk-11.0.13+8
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration F:\INTERMATH\intermath 2021-2023\spain\DM\a1\A.1.Begum\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2022-11-16 19:26:44.922
+!MESSAGE Run Configuration3 in F:/INTERMATH/intermath 2021-2023/spain/DM/a1/A.1.Begum/My assignments

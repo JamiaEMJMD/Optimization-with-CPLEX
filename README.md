@@ -1,5 +1,5 @@
-# Optimization-with-CPLEX
-The "Optimization-with-CPLEX" GitHub repository is a collection of optimization problems solved using the CPLEX optimization toolbox. The repository contains examples of linear programming problems, production planning problems, and job scheduling problems.
+# Case studies of Production Planning and Job Scheduling Problems using CPLEX
+This GitHub repository is a collection of optimization problems solved using the CPLEX optimization toolbox. The repository contains examples of linear programming problems, production planning problems, and job scheduling problems.
 
 In Assignment-1 ,I have solved the following problem:
 
